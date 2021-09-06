@@ -3,7 +3,7 @@
 #Videos path
 if [[ "$1" == "" ]]
 then
-    read -re -p "Enter the absolute path of the videos' directory as written (Example: /home/user/Desktop/Videos\ to\ be\ converted/): " vdir
+    read -re -p "Enter the path of the videos' directory (Example: /home/user/Desktop/Videos\ to\ be\ converted/): " vdir
 else
     #Set path
     vdir="$1";
