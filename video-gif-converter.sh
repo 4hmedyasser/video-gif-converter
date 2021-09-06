@@ -1,4 +1,24 @@
-ffmpeg -i input.mp4 -filter_complex "crop=iw-900" input_cropped.mp4
-ffmpeg -i input_cropped.mp4 -vf scale=210x210:flags=lanczos -c:v libx264 -preset slow -crf 21 scaled_input.mp4
-ffmpeg -y -i scaled_input.mp4 -vf fps=10,scale=210:-1:flags=lanczos,palettegen palette.png
-ffmpeg -i scaled_input.mp4 -i palette.png -filter_complex "fps=10,scale=210:-1:flags=lanczos[x];[x][1:v]paletteuse" output.gif
+#!/bin/bash
+
+#Videos path
+if [[ "$1" == "" ]]
+then
+    echo "Enter the absolute path of the videos' directory as written(Example: /home/user/Desktop/Videos\ to\ be\ converted/)"
+    read -re vdir;
+else
+    vdir="$1";
+fi
+
+cd "$vdir"
+
+#Loop over videos
+for fvid in $(ls)
+do
+    cat "$fvid"
+    # ffmpeg -i input.mp4 -filter_complex "crop=iw-900" input_cropped.mp4
+    # ffmpeg -i input_cropped.mp4 -vf scale=210x210:flags=lanczos -c:v libx264 -preset slow -crf 21 scaled_input.mp4
+    # rm input_cropped.mp4
+    # ffmpeg -y -i scaled_input.mp4 -vf fps=10,scale=210:-1:flags=lanczos,palettegen palette.png
+    # ffmpeg -i scaled_input.mp4 -i palette.png -filter_complex "fps=10,scale=210:-1:flags=lanczos[x];[x][1:v]paletteuse" output.gif
+    # rm scaled_input.mp4 palette.png
+done
