@@ -1,4 +1,4 @@
-# video-gif-converter
+# Video GIF Converter
 BASH script to convert MP4 files to GIFs in bulk using FFmpeg.
 
 # Dependancies
