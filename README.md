@@ -24,7 +24,7 @@ Or you can pass the path to the script as an argument
 ```
 
 # Note:
-###### The script was made for a specific set of videos with a certain resolution it may not work with all videos and it will need editing to the cropping and scaling values.
+The script was made for a specific set of videos with a certain resolution it may not work with all videos and it will need editing to the cropping and scaling values.
 
 # To Do
 * [ ] Making the cropping and scaling values into variables. 
